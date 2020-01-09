@@ -34,9 +34,12 @@ Copyright 2020  Ludovic mercet
 
 cQuadEncoder gQuadEncoder;
 
-volatile b8 gIndexFound;
-volatile u8 gLastStateX, gLastStateX;
-volatile s32 gPositionX, gPositionY;
+volatile b8 gIndexFoundX;
+volatile b8 gIndexFoundY;
+volatile u8 gLastStateX;
+volatile u8 gLastStateY;
+volatile s32 gPositionX; 
+volatile s32 gPositionY;
 
 //--------------------------------------------------------------------------------------------------------
 
@@ -119,13 +122,13 @@ void cQuadEncoder::Init (s32 positionX,s32 positionY,b8 pullups)
 	pinMode(QUAD_ENC2_PIN_A,it);
 	pinMode(QUAD_ENC2_PIN_B,it);
 
-	gIndexFound = false;
+	gIndexFoundX = gIndexFoundY = false;
 	gPositionX = positionX;
 	gLastStateX = 0;
 	if (digitalReadFast(QUAD_ENC1_PIN_A)) gLastStateX |= 1;
 	if (digitalReadFast(QUAD_ENC1_PIN_B)) gLastStateX |= 2;
-	if (digitalReadFast(QUAD_ENC2_PIN_A)) gLastStateX |= 4;
-	if (digitalReadFast(QUAD_ENC2_PIN_B)) gLastStateX |= 8;
+	if (digitalReadFast(QUAD_ENC2_PIN_A)) gLastStateY |= 4;
+	if (digitalReadFast(QUAD_ENC2_PIN_B)) gLastStateY |= 8;
 	
 	EnableInterrupt(CORE_PIN0_INT,CHANGE);
 	EnableInterrupt(CORE_PIN1_INT,CHANGE);
@@ -184,28 +187,54 @@ s8 pos_inc[] =
 	0,		// 15 not possible
 };
 
-void cQuadEncoder::Update()
+void cQuadEncoder::UpdateX()
 {
 	u8 state = gLastStateX;
 	u8 pd = PIND;											// Optim : change code according to the pins and the mcu used (or use the lines above)
 	state |= pd & 0b1100;
 	gPositionX += pos_inc[state];
 	gLastStateX = (state >> 2);
-	if (gIndexFound)
+	if (gIndexFoundX)
 		return;
 	pd &= 2;
 	if (pd == 0)	//digitalReadFast(QUAD_ENC_PIN_I))
 		return;
-	gIndexFound = true;
-	gPosition = ROTATION_MID;
+	gIndexFoundX = true;
+	gPositionX = ROTATION_MID;
+}
+
+void cQuadEncoder::UpdateY()
+{
+	u8 state = gLastStateY;
+	u8 pd = PIND;											// Optim : change code according to the pins and the mcu used (or use the lines above)
+	state |= pd & 0b0011;
+	gPositionY += pos_inc[state];
+	gLastStateY = ((state & 0b11) << 2);
+	if (gIndexFoundY)
+	return;
+	pd &= 2;
+	if (pd == 0)	//digitalReadFast(QUAD_ENC_PIN_I))
+	return;
+	gIndexFoundY = true;
+	gPositionY = TRANSLATION_MID;
 }
 
 ISR(INT2_vect)
 {
-	gQuadEncoder.Update();
+	gQuadEncoder.UpdateX();
 }
 
 ISR(INT3_vect)
 {
-	gQuadEncoder.Update();
+	gQuadEncoder.UpdateX();
+}
+
+ISR(INT0_vect)
+{
+	gQuadEncoder.UpdateY();
+}
+
+ISR(INT1_vect)
+{
+	gQuadEncoder.UpdateY();
 }

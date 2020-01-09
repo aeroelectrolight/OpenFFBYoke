@@ -37,13 +37,13 @@ this software.
 
 //----------------------------------------- Options -------------------------------------------------------
 
-cQuadEncoder YokeEncX;
+cQuadEncoder YokeEnc;
 //Encoder YokeEncX(0,1);
 
 //--------------------------------------- Globals --------------------------------------------------------
 
-s32 turn;
-long position  = -999;
+long turnX, turnY;
+
 
 // The setup() function runs once each time the micro-controller starts
 void setup()
@@ -51,57 +51,36 @@ void setup()
 	DEBUG_SERIAL.begin(115200);
 
 	// init encoder 
-	YokeEncX.Init(0,false);//ROTATION_MID - brWheelFFB.offset);
-	//YokeEncX.write(0);
+	YokeEnc.Init(0,0,false);//ROTATION_MID - brWheelFFB.offset);
 }
 
 // Add the main program code into the continuous loop() function
 void loop()
 {
-	turn = YokeEncX.Read();
-	if(turn != position){
-		DEBUG_SERIAL.println(turn);
-		position = turn;
+	long position = YokeEnc.ReadX();
+	if(position != turnX){
+		DEBUG_SERIAL.print("X : ");
+		DEBUG_SERIAL.println(position);
+		turnX = position;
 	}
-	
+	position = YokeEnc.ReadY();
+	if(position != turnY){
+		DEBUG_SERIAL.print("Y : ");
+		DEBUG_SERIAL.println(position);
+		turnY = position;
+	}
+	if (DEBUG_SERIAL.available())
+	{
+		u8 c = DEBUG_SERIAL.read();
+		switch(c){
+			case 'X':
+				YokeEnc.WriteX(0);
+				break;
+			case 'Y':
+				YokeEnc.WriteY(0);
+				break;
+		}
+	}
 	//delay(1000);
 
 }
-
-/*
-Encoder knobLeft(5, 6);
-Encoder knobRight(0, 1);
-
-//   avoid using pins with LEDs attached
-
-void setup() {
-	Serial.begin(9600);
-	Serial.println("TwoKnobs Encoder Test:");
-}
-
-long positionLeft  = -999;
-long positionRight = -999;
-
-void loop() {
-	long newLeft, newRight;
-	newLeft = knobLeft.read();
-	newRight = knobRight.read();
-	if (newLeft != positionLeft || newRight != positionRight) {
-		Serial.print("Left = ");
-		Serial.print(newLeft);
-		Serial.print(", Right = ");
-		Serial.print(newRight);
-		Serial.println();
-		positionLeft = newLeft;
-		positionRight = newRight;
-	}
-	// if a character is sent from the serial monitor,
-	// reset both back to zero.
-	if (Serial.available()) {
-		Serial.read();
-		Serial.println("Reset both knobs to zero");
-		knobLeft.write(0);
-		knobRight.write(0);
-	}
-}
-*/

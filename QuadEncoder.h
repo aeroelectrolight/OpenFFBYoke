@@ -10,9 +10,12 @@
 
 #define	ROTATION_DEG	900	
 #define	CPR				3960	// 4*990
-#define MAX_ENCODER_ROTATION 9900
-int ROTATION_MAX = MAX_ENCODER_ROTATION;
-#define	ROTATION_MID	(ROTATION_MAX>>1)
+#define MAX_ENCODER_ROTATION 3000
+#define MAX_ENCODER_TRANSLATION 3000
+int ROTATION_MAX = MAX_ENCODER_ROTATION; 
+#define	ROTATION_MID (ROTATION_MAX>>1) 
+int TRANSLATION_MAX = MAX_ENCODER_TRANSLATION;
+#define	TRANSLATION_MID (TRANSLATION_MAX>>1)
 
 //-----------------------------------------------------------------------------------------------
 
