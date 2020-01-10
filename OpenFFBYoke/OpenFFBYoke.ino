@@ -29,20 +29,28 @@ arising out of or in connection with the use or performance of
 this software.
 */
 
+#include "ffb.h"
+#include "ffb_pro.h"
+
 #include "Config.h"
 #include "QuadEncoder.h"
-//#define ENCODER_OPTIMIZE_INTERRUPTS
-//#include <Encoder.h>
 
+#include <USBDesc.h>
+
+u32 now_micros = micros();
 
 //----------------------------------------- Options -------------------------------------------------------
 
 cQuadEncoder YokeEnc;
-//Encoder YokeEncX(0,1);
 
 //--------------------------------------- Globals --------------------------------------------------------
 
-long turnX, turnY;
+cFFB gFFB;
+BRFFB brWheelFFB;
+
+//long ailerons, elevator;
+u32 last_refresh;
+s16 ailerons,elevator,trimAilerons,trimElevator, buttons;
 
 
 // The setup() function runs once each time the micro-controller starts
@@ -51,23 +59,34 @@ void setup()
 	DEBUG_SERIAL.begin(115200);
 
 	// init encoder 
-	YokeEnc.Init(0,0,false);//ROTATION_MID - brWheelFFB.offset);
+	YokeEnc.Init(0,0,false);//
+	
+	last_refresh = micros();
 }
 
 // Add the main program code into the continuous loop() function
 void loop()
 {
-	long position = YokeEnc.ReadX();
-	if(position != turnX){
-		DEBUG_SERIAL.print("X : ");
-		DEBUG_SERIAL.println(position);
-		turnX = position;
-	}
-	position = YokeEnc.ReadY();
-	if(position != turnY){
-		DEBUG_SERIAL.print("Y : ");
-		DEBUG_SERIAL.println(position);
-		turnY = position;
+	now_micros = micros();
+	
+	if ((now_micros - last_refresh) >= CONTROL_PERIOD){
+		//
+		last_refresh = now_micros;
+		//
+		long position = YokeEnc.ReadX();
+		if(position != ailerons){
+			DEBUG_SERIAL.print("X : ");
+			DEBUG_SERIAL.println(position);
+			ailerons = position;
+		}
+		position = YokeEnc.ReadY();
+		if(position != elevator){
+			DEBUG_SERIAL.print("Y : ");
+			DEBUG_SERIAL.println(position);
+			elevator = position;
+		}
+		elevator = constrain(elevator,0,4000);
+		SendInputReport((s16)ailerons, (u16)elevator, (u16)trimAilerons, (u16)trimElevator, (u16)buttons);
 	}
 	if (DEBUG_SERIAL.available())
 	{
@@ -81,6 +100,4 @@ void loop()
 				break;
 		}
 	}
-	//delay(1000);
-
 }

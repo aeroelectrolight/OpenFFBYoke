@@ -28,15 +28,15 @@
     <BootSegment>0</BootSegment>
     <AsfFrameworkConfig>
       <framework-data>
-  <options />
-  <configurations />
-  <files />
-  <documentation help="" />
-  <offline-documentation help="" />
-  <dependencies>
-    <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.34.1" />
-  </dependencies>
-</framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.34.1" />
+        </dependencies>
+      </framework-data>
     </AsfFrameworkConfig>
     <preserveEEPROM>true</preserveEEPROM>
     <ResetRule>0</ResetRule>
@@ -68,7 +68,8 @@
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.directories.IncludePaths>
     <ListValues>
-      <Value>../../../OpenFFBYoke</Value>
+      <Value>../</Value>
+      <Value>C:/Users/ludom/Documents/Arduino/libraries/digitalWriteFast</Value>
       <Value>C:/Program Files (x86)/Arduino/libraries</Value>
       <Value>C:/Users/ludom/Documents/Arduino/libraries</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
@@ -107,7 +108,8 @@
   </avrgcccpp.compiler.symbols.DefSymbols>
   <avrgcccpp.compiler.directories.IncludePaths>
     <ListValues>
-      <Value>../../../OpenFFBYoke</Value>
+      <Value>../</Value>
+      <Value>C:/Users/ludom/Documents/Arduino/libraries/digitalWriteFast</Value>
       <Value>C:/Program Files (x86)/Arduino/libraries</Value>
       <Value>C:/Users/ludom/Documents/Arduino/libraries</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
@@ -130,7 +132,7 @@
   <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
 </AvrGccCpp>
     </ToolchainSettings>
-    <VMSETTING_IncludePaths>../../../OpenFFBYoke;C:/Program Files (x86)/Arduino/libraries;C:/Users/ludom/Documents/Arduino/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/avr-libc;C:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/leonardo;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/avr;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include;</VMSETTING_IncludePaths>
+    <VMSETTING_IncludePaths>../../../OpenFFBYoke;C:/Program Files (x86)/Arduino/libraries;C:/Users/ludom/Documents/Arduino/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/avr-libc;C:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/leonardo;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/avr;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include;../;C:/Users/ludom/Documents/Arduino/libraries/digitalWriteFast;</VMSETTING_IncludePaths>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
@@ -158,7 +160,8 @@
   </avrgcc.compiler.symbols.DefSymbols>
   <avrgcc.compiler.directories.IncludePaths>
     <ListValues>
-      <Value>../../../OpenFFBYoke</Value>
+      <Value>../</Value>
+      <Value>C:/Users/ludom/Documents/Arduino/libraries/digitalWriteFast</Value>
       <Value>C:/Program Files (x86)/Arduino/libraries</Value>
       <Value>C:/Users/ludom/Documents/Arduino/libraries</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
@@ -197,7 +200,8 @@
   </avrgcccpp.compiler.symbols.DefSymbols>
   <avrgcccpp.compiler.directories.IncludePaths>
     <ListValues>
-      <Value>../../../OpenFFBYoke</Value>
+      <Value>../</Value>
+      <Value>C:/Users/ludom/Documents/Arduino/libraries/digitalWriteFast</Value>
       <Value>C:/Program Files (x86)/Arduino/libraries</Value>
       <Value>C:/Users/ludom/Documents/Arduino/libraries</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
@@ -220,10 +224,25 @@
   <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
 </AvrGccCpp>
     </ToolchainSettings>
-    <VMSETTING_IncludePaths>../../../OpenFFBYoke;C:/Program Files (x86)/Arduino/libraries;C:/Users/ludom/Documents/Arduino/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/avr-libc;C:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/leonardo;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/avr;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include;</VMSETTING_IncludePaths>
+    <VMSETTING_IncludePaths>../../../OpenFFBYoke;C:/Program Files (x86)/Arduino/libraries;C:/Users/ludom/Documents/Arduino/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/avr-libc;C:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/leonardo;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/avr;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include;../;C:/Users/ludom/Documents/Arduino/libraries/digitalWriteFast;</VMSETTING_IncludePaths>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="Config.ino">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="debug.ino">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="ffb.ino">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="ffb_pro.ino">
+      <SubType>compile</SubType>
+    </None>
     <None Include="OpenFFBYoke.ino">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="QuadEncoder.ino">
       <SubType>compile</SubType>
     </None>
   </ItemGroup>
@@ -231,6 +250,36 @@
     <Folder Include="__vm\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="debug.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ffb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ffb.h.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ffb_pro.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HID.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HID.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="QuadEncoder.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="USBCore.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="USBCore.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="__vm\.OpenFFBYoke.vsarduino.h">
       <SubType>compile</SubType>
     </Compile>
