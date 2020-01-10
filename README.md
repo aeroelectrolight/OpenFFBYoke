@@ -22,12 +22,12 @@ A Yoke joystick open source firmware with force feedback on arduino leonardo for
 
 ### Installation
 __________________
-#####  - Install the *"Arduino Core"* folder in the Arduino software core folder.
-* To facilitate any updating of the core files with the project repository
-```sh
-/git-directory/arduino-1.0.5/[arduino.exe | *.dll | hardware/ | libraries/ ]
-/git-directory/arduino-1.0.5/(project)[ hardware/ | libraries/ ]
-/git-directory/OpenFFBYoke/(project)[ * ]
+#####  - Install the *"Arduino Core"* folder in the Arduino software cores folder.
+
+create a backup of this folder before !
+
+```sh 
+  > hardware > arduino > avr > cores > arduino
 ```
 
 ___________________
