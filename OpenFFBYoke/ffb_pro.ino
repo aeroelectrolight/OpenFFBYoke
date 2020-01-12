@@ -172,7 +172,7 @@ s32 InertiaEffect(f32 spd, s32 mag)
 
 void SetIndex ()
 {
-	//gIndexFound = true;
+	//gIndexFound = true;  /// todo dans le fichier quadencoder
 // 	myEnc.set(ROTATION_MID);
 }
 

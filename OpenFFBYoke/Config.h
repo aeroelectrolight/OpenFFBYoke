@@ -15,9 +15,12 @@
 
 #define LED_PIN				13
 
-#define	PWM_PIN				9 
-#define	DIR_PIN				10
-#define	REVERSE_DIR_PIN		11
+#define	PWM_PINA			9  // Timer1 PWM pin A
+#define	DIR_PINA			11
+#define	REVERSE_DIR_PINA	12
+#define	PWM_PINB			10  //Timer1 PWM pin B
+#define	DIR_PINB			6
+#define	REVERSE_DIR_PINB	7
 
 //------------------------------------- Helpers -----------------------------------------------------
 /*

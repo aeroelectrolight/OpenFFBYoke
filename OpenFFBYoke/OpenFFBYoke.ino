@@ -57,9 +57,14 @@ s16 ailerons,elevator,trimAilerons,trimElevator, buttons;
 void setup()
 {
 	DEBUG_SERIAL.begin(115200);
-
+	while (!Serial) {
+		; // wait for serial port to connect. Needed for native USB 
+	}
 	// init encoder 
 	YokeEnc.Init(0,0,false);//
+	// init pwm
+	InitPWM();
+	setPWM(0,false);
 	
 	last_refresh = micros();
 }
@@ -87,7 +92,10 @@ void loop()
 		}
 		elevator = constrain(elevator,0,4000);
 		SendInputReport((s16)ailerons, (u16)elevator, (u16)trimAilerons, (u16)trimElevator, (u16)buttons);
+		//test pwm
+		setPWMDir(ailerons,false);
 	}
+		
 	if (DEBUG_SERIAL.available())
 	{
 		u8 c = DEBUG_SERIAL.read();
@@ -96,6 +104,12 @@ void loop()
 				YokeEnc.WriteX(0);
 				break;
 			case 'Y':
+				YokeEnc.WriteY(0);
+				break;
+			case 't':
+				YokeEnc.WriteX(0);
+				break;
+			case 'r':
 				YokeEnc.WriteY(0);
 				break;
 		}
