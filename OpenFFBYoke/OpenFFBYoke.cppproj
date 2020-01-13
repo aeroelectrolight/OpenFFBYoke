@@ -133,6 +133,11 @@
 </AvrGccCpp>
     </ToolchainSettings>
     <VMSETTING_IncludePaths>../../../OpenFFBYoke;C:/Program Files (x86)/Arduino/libraries;C:/Users/ludom/Documents/Arduino/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/avr-libc;C:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/leonardo;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/avr;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include;../;C:/Users/ludom/Documents/Arduino/libraries/digitalWriteFast;</VMSETTING_IncludePaths>
+    <VisualMicroSettings>
+      <VisualMicroSettings xmlns="">
+        <arduino.upload.port>COM13</arduino.upload.port>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
@@ -225,6 +230,11 @@
 </AvrGccCpp>
     </ToolchainSettings>
     <VMSETTING_IncludePaths>../../../OpenFFBYoke;C:/Program Files (x86)/Arduino/libraries;C:/Users/ludom/Documents/Arduino/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/avr-libc;C:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/leonardo;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/avr;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include;../;C:/Users/ludom/Documents/Arduino/libraries/digitalWriteFast;</VMSETTING_IncludePaths>
+    <VisualMicroSettings>
+      <VisualMicroSettings xmlns="">
+        <arduino.upload.port>COM13</arduino.upload.port>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
   </PropertyGroup>
   <ItemGroup>
     <None Include="Config.ino">
@@ -233,13 +243,10 @@
     <None Include="debug.ino">
       <SubType>compile</SubType>
     </None>
-    <None Include="ffb.ino">
-      <SubType>compile</SubType>
-    </None>
-    <None Include="ffb_pro.ino">
-      <SubType>compile</SubType>
-    </None>
     <None Include="OpenFFBYoke.ino">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="pwm.ino">
       <SubType>compile</SubType>
     </None>
     <None Include="QuadEncoder.ino">
@@ -256,28 +263,37 @@
     <Compile Include="debug.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="ffb.h">
+    <Compile Include="FfbEngine.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="ffb.h.h">
+    <Compile Include="FfbEngine.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="ffb_pro.h">
+    <Compile Include="FfbReportHandler.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HID.cpp">
+    <Compile Include="FfbReportHandler.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="HID.h">
+    <Compile Include="FfbWheel.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FfbWheel.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FfbWheelDescriptor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HIDReportType.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="QuadEncoder.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="USBCore.cpp">
+    <Compile Include="WHID.cpp">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="USBCore.h">
+    <Compile Include="WHID.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="__vm\.OpenFFBYoke.vsarduino.h">
