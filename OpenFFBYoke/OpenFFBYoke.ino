@@ -29,8 +29,7 @@ arising out of or in connection with the use or performance of
 this software.
 */
 
-#include "ffb.h"
-#include "ffb_pro.h"
+#include "FfbWheel.h"
 
 #include "Config.h"
 #include "QuadEncoder.h"
@@ -45,8 +44,6 @@ cQuadEncoder YokeEnc;
 
 //--------------------------------------- Globals --------------------------------------------------------
 
-cFFB gFFB;
-BRFFB brWheelFFB;
 
 //long ailerons, elevator;
 u32 last_refresh;
@@ -90,8 +87,8 @@ void loop()
 			DEBUG_SERIAL.println(position);
 			elevator = position;
 		}
-		elevator = constrain(elevator,0,4000);
-		SendInputReport((s16)ailerons, (u16)elevator, (u16)trimAilerons, (u16)trimElevator, (u16)buttons);
+//		elevator = constrain(elevator,0,4000);
+//		SendInputReport((s16)ailerons, (u16)elevator, (u16)trimAilerons, (u16)trimElevator, (u16)buttons);
 		//test pwm
 		setPWMDir(ailerons,false);
 	}
