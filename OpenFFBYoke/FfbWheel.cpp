@@ -31,7 +31,6 @@ void Wheel_::begin(void) {
   // release all buttons
   ffbEngine.SetFfb(&HID().ffbReportHandler);
   //encoder.setConfig(wheelConfig);
-
   end();
 }
 

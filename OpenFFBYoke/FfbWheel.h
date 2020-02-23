@@ -39,7 +39,7 @@ class Wheel_
     FfbEngine ffbEngine;
 
 };
-extern Wheel_ Wheel;
+extern Wheel_ Wheel;  // wheel
 
 #endif
 #endif

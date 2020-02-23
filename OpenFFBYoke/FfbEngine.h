@@ -45,12 +45,12 @@ class FfbEngine {
     void SetFfb(FfbReportHandler* reporthandler);
     FfbReportHandler* ffbReportHandler;
     //
-    //    float FfbCos(float angle);
-    //    float FfbSin(float angle);
+    float FfbCos(float angle);
+    float FfbSin(float angle);
 
 
     //    void ApplyDirection(volatile TEffectState&  effect, int32_t force, int32_t* axes);
-    //    void CalcCondition(volatile TEffectState&  effect, int32_t * outValue, int32_t* inValue);
+    //	  void CalcCondition(volatile TEffectState&  effect, int32_t * outValue, int32_t* inValue);
     //    void FfbGetFeedbackValue(int16_t* axisPosition, int16_t* out);
 
     int32_t ForceCalculator(); //int32_t ForceCalculator(Encoder encoder);
@@ -66,7 +66,7 @@ class FfbEngine {
     int32_t ApplyGain(uint8_t value, uint8_t gain);
     int32_t ApplyEnvelope(volatile TEffectState&  effect, int32_t value);
     int32_t NormalizeRange(int32_t x, int32_t maxValue);
-
+	void ApplyDirection(volatile TEffectState& effect, int32_t force, int32_t* axes);
 
 };
 

@@ -173,8 +173,8 @@ int32_t FfbEngine::ForceCalculator()
         case USB_EFFECT_CONSTANT:
 //          ReportPrint(effect);
           force += ConstantForceCalculator(effect);
-//          Serial.print("force ");
-//          Serial.println (force);
+          Serial.print("force ");
+          Serial.println (force);
           break;
         case USB_EFFECT_RAMP:
           force += RampForceCalculator(effect);
@@ -196,8 +196,9 @@ int32_t FfbEngine::ForceCalculator()
           break;
         case USB_EFFECT_SPRING:
           //          position
-          //          ReportPrint(effect);
+		  //		ReportPrint(effect);
           //force += ConditionForceCalculator(effect, force, NormalizeRange(encoder.currentPosition, encoder.maxValue * 2) );
+		  force += ConditionForceCalculator(effect, force, 80);
           //          Serial.print("force ");
           //          Serial.println (force);
           break;
@@ -211,6 +212,7 @@ int32_t FfbEngine::ForceCalculator()
           //          position change
           //          ReportPrint(effect);
           //force += ConditionForceCalculator(effect, force, NormalizeRange(encoder.positionChange, encoder.maxValue * 2) );
+		  force += ConditionForceCalculator(effect, force, 20 );
           //          Serial.println (force);
           break;
         case USB_EFFECT_CUSTOM:
@@ -261,4 +263,46 @@ int32_t FfbEngine::ApplyEnvelope(volatile TEffectState&  effect, int32_t value)
   newValue *= value;
   newValue /= 255;
   return newValue;
+}
+
+void FfbEngine::ApplyDirection(volatile TEffectState& effect, int32_t force, int32_t* axes)
+{
+	float directionX = effect.directionX;
+	float directionY = effect.directionY;
+	if (effect.enableAxis == DIRECTION_ENABLE)
+	{
+		float angle = (directionX * 2) * DEG_TO_RAD;
+		float fForce = force;
+		axes[0] += (int32_t)(FfbCos(angle) * fForce);
+		axes[1] += (int32_t)(FfbSin(angle) * fForce);
+	}
+	else
+	{
+		if (effect.enableAxis & X_AXIS_ENABLE)
+		{
+			float angle = (directionX * 2) * DEG_TO_RAD;
+			float fForce = force;
+			axes[0] += (int32_t)(FfbCos(angle) * fForce);
+		}
+		
+		if (effect.enableAxis & Y_AXIS_ENABLE)
+		{
+			float angle = (directionY * 2) * DEG_TO_RAD;
+			float fForce = force;
+			axes[1] += (int32_t)(FfbSin(angle) * fForce);
+		}
+	}
+}
+
+//implement cos and sin functions
+float FfbCos(float angle)
+{
+	//return (int32_t)(arm_cos_f32(angle);
+	return 0;
+}
+
+float FfbSin(float angle)
+{
+	//return (int32_t)(arm_sin_f32(angle);
+	return 0;
 }

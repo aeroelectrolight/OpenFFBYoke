@@ -44,26 +44,42 @@ cQuadEncoder YokeEnc;
 
 //--------------------------------------- Globals --------------------------------------------------------
 
+Wheel_ Yoke;
 
 //long ailerons, elevator;
 u32 last_refresh;
-s16 ailerons,elevator,trimAilerons,trimElevator, buttons;
+int zero;
+s16 ailerons,aileronsMax,aileronsMin,elevator,elevatorMax,elevatorMin,trimAilerons,trimElevator, buttons, total_force;
+//s8 ; 
 
+
+void initButton()
+{
+	pinMode(BUTTON_1,INPUT_PULLUP);
+	pinMode(BUTTON_2,INPUT_PULLUP);  
+}
 
 // The setup() function runs once each time the micro-controller starts
 void setup()
 {
 	DEBUG_SERIAL.begin(115200);
+	/*
 	while (!Serial) {
 		; // wait for serial port to connect. Needed for native USB 
 	}
+	*/
 	// init encoder 
 	YokeEnc.Init(0,0,false);//
 	// init pwm
 	InitPWM();
 	setPWM(0,false);
 	
+	initButton();
+	
+	Yoke.begin();
+	
 	last_refresh = micros();
+	//calibration();
 }
 
 // Add the main program code into the continuous loop() function
@@ -87,10 +103,29 @@ void loop()
 			DEBUG_SERIAL.println(position);
 			elevator = position;
 		}
-//		elevator = constrain(elevator,0,4000);
+		
+		Yoke.xAxis(ailerons);
+		Yoke.yAxis(elevator);
+		Yoke.write();
+		
+		Yoke.RecvFfbReport();
+		
+		total_force = Yoke.ffbEngine.ForceCalculator();
+		DEBUG_SERIAL.println(total_force);
+		byte zero1 = 0;
+		if (total_force < zero1 )
+		{
+			total_force = map(total_force,-255,zero1,-400,-200);
+		} 
+		else if (total_force > zero1 )
+		{
+			total_force = map(total_force,zero1,255,200,400);
+		}
+		//elevator = map(ailerons,aileronsMin,aileronsMax,-400,400);
 //		SendInputReport((s16)ailerons, (u16)elevator, (u16)trimAilerons, (u16)trimElevator, (u16)buttons);
 		//test pwm
-		setPWMDir(ailerons,false);
+		DEBUG_SERIAL.println(total_force);
+		setPWMDir(total_force,true);
 	}
 		
 	if (DEBUG_SERIAL.available())
@@ -111,4 +146,39 @@ void loop()
 				break;
 		}
 	}
+}
+
+// fonction de calibration
+
+void calibration(){
+	bool test = true;
+	long position;
+	while(test){
+		position = YokeEnc.ReadX();
+		if(!digitalRead(BUTTON_2)){
+			test = false;
+			DEBUG_SERIAL.println("passage");
+		}
+		aileronsMin = position;
+	}
+	delay(500);
+	test = true;
+	while(test){
+		position = YokeEnc.ReadX();
+		if(!digitalRead(BUTTON_2)){
+			test = false;
+		}
+		aileronsMax = position;
+	}
+	zero = (aileronsMin + aileronsMax)/2;
+	DEBUG_SERIAL.println(zero);
+	setPWMDir(elevator,true);
+	while(test){
+		position = YokeEnc.ReadX();
+		if(position == zero){
+			test = false;
+			YokeEnc.WriteX(0);
+		}
+	}
+	delay(1000);
 }

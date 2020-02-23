@@ -56,7 +56,7 @@
     <ListValues>
       <Value>__AVR_ATmega32u4__</Value>
       <Value>__AVR_ATmega32U4__</Value>
-      <Value>ARDUINO=10809</Value>
+      <Value>ARDUINO=108010</Value>
       <Value>ARDUINO_MAIN</Value>
       <Value>F_CPU=16000000L</Value>
       <Value>__AVR__</Value>
@@ -74,12 +74,9 @@
       <Value>C:/Users/ludom/Documents/Arduino/libraries</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino</Value>
-      <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/arduino</Value>
-      <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/avr-libc</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/leonardo</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/avr</Value>
-      <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include</Value>
     </ListValues>
@@ -96,7 +93,7 @@
     <ListValues>
       <Value>__AVR_ATmega32u4__</Value>
       <Value>__AVR_ATmega32U4__</Value>
-      <Value>ARDUINO=10809</Value>
+      <Value>ARDUINO=108010</Value>
       <Value>ARDUINO_MAIN</Value>
       <Value>F_CPU=16000000L</Value>
       <Value>__AVR__</Value>
@@ -114,12 +111,9 @@
       <Value>C:/Users/ludom/Documents/Arduino/libraries</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino</Value>
-      <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/arduino</Value>
-      <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/avr-libc</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/leonardo</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/avr</Value>
-      <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include</Value>
     </ListValues>
@@ -134,8 +128,8 @@
     </ToolchainSettings>
     <VMSETTING_IncludePaths>../../../OpenFFBYoke;C:/Program Files (x86)/Arduino/libraries;C:/Users/ludom/Documents/Arduino/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/avr-libc;C:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/leonardo;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/avr;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include;../;C:/Users/ludom/Documents/Arduino/libraries/digitalWriteFast;</VMSETTING_IncludePaths>
     <VisualMicroSettings>
-      <VisualMicroSettings xmlns="">
-        <arduino.upload.port>COM13</arduino.upload.port>
+      <VisualMicroSettings>
+        <arduino.upload.port>COM15</arduino.upload.port>
       </VisualMicroSettings>
     </VisualMicroSettings>
   </PropertyGroup>
@@ -153,7 +147,7 @@
     <ListValues>
       <Value>__AVR_ATmega32u4__</Value>
       <Value>__AVR_ATmega32U4__</Value>
-      <Value>ARDUINO=10809</Value>
+      <Value>ARDUINO=108010</Value>
       <Value>ARDUINO_MAIN</Value>
       <Value>F_CPU=16000000L</Value>
       <Value>__AVR__</Value>
@@ -171,12 +165,9 @@
       <Value>C:/Users/ludom/Documents/Arduino/libraries</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino</Value>
-      <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/arduino</Value>
-      <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/avr-libc</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/leonardo</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/avr</Value>
-      <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include</Value>
     </ListValues>
@@ -193,7 +184,7 @@
     <ListValues>
       <Value>__AVR_ATmega32u4__</Value>
       <Value>__AVR_ATmega32U4__</Value>
-      <Value>ARDUINO=10809</Value>
+      <Value>ARDUINO=108010</Value>
       <Value>ARDUINO_MAIN</Value>
       <Value>F_CPU=16000000L</Value>
       <Value>__AVR__</Value>
@@ -211,12 +202,9 @@
       <Value>C:/Users/ludom/Documents/Arduino/libraries</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino</Value>
-      <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/arduino</Value>
-      <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/avr-libc</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/leonardo</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/avr</Value>
-      <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include</Value>
       <Value>C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include</Value>
     </ListValues>
@@ -231,8 +219,8 @@
     </ToolchainSettings>
     <VMSETTING_IncludePaths>../../../OpenFFBYoke;C:/Program Files (x86)/Arduino/libraries;C:/Users/ludom/Documents/Arduino/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/libraries;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/arduino;C:/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/avr-libc;C:/Program Files (x86)/Arduino/hardware/arduino/avr/variants/leonardo;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/avr;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.8.1/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.2/include;C:/Program Files (x86)/Arduino/hardware/tools/avr/lib/gcc/avr/4.9.3/include;../;C:/Users/ludom/Documents/Arduino/libraries/digitalWriteFast;</VMSETTING_IncludePaths>
     <VisualMicroSettings>
-      <VisualMicroSettings xmlns="">
-        <arduino.upload.port>COM13</arduino.upload.port>
+      <VisualMicroSettings>
+        <arduino.upload.port>COM15</arduino.upload.port>
       </VisualMicroSettings>
     </VisualMicroSettings>
   </PropertyGroup>

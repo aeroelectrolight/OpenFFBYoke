@@ -21,6 +21,9 @@ typedef uint8_t b8;
 
 #define LED_PIN				13
 
+#define BUTTON_1			4
+#define BUTTON_2			5
+
 #define	PWM_PINA			9  // Timer1 PWM pin A
 #define	DIR_PINA			11
 #define	REVERSE_DIR_PINA	12
