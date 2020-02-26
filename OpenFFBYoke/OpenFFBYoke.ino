@@ -50,6 +50,8 @@ Wheel_ Yoke;
 u32 last_refresh;
 int zero;
 s16 ailerons,aileronsMax,aileronsMin,elevator,elevatorMax,elevatorMin,trimAilerons,trimElevator, buttons, total_force;
+int16_t x_y_force[2];
+int16_t* pointeurx_y_force;
 //s8 ; 
 
 
@@ -80,6 +82,7 @@ void setup()
 	
 	last_refresh = micros();
 	//calibration();
+	pointeurx_y_force = &x_y_force[0];
 }
 
 // Add the main program code into the continuous loop() function
@@ -110,8 +113,14 @@ void loop()
 		
 		Yoke.RecvFfbReport();
 		
-		total_force = Yoke.ffbEngine.ForceCalculator();
-		DEBUG_SERIAL.println(total_force);
+		Yoke.ffbEngine.ForceCalculator(x_y_force);
+		total_force = x_y_force[0];
+		/*
+		DEBUG_SERIAL.print("axeX : ");
+		DEBUG_SERIAL.println(x_y_force[0]);
+		DEBUG_SERIAL.print("axeY : ");
+		DEBUG_SERIAL.println(x_y_force[1]);
+		*/
 		byte zero1 = 0;
 		if (total_force < zero1 )
 		{
@@ -124,7 +133,7 @@ void loop()
 		//elevator = map(ailerons,aileronsMin,aileronsMax,-400,400);
 //		SendInputReport((s16)ailerons, (u16)elevator, (u16)trimAilerons, (u16)trimElevator, (u16)buttons);
 		//test pwm
-		DEBUG_SERIAL.println(total_force);
+		//DEBUG_SERIAL.println(total_force);
 		setPWMDir(total_force,true);
 	}
 		

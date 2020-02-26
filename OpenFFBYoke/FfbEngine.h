@@ -53,14 +53,14 @@ class FfbEngine {
     //	  void CalcCondition(volatile TEffectState&  effect, int32_t * outValue, int32_t* inValue);
     //    void FfbGetFeedbackValue(int16_t* axisPosition, int16_t* out);
 
-    int32_t ForceCalculator(); //int32_t ForceCalculator(Encoder encoder);
-    int32_t ConstantForceCalculator(volatile TEffectState&  effect);
-    int32_t RampForceCalculator(volatile TEffectState&  effect);
-    int32_t SquareForceCalculator(volatile TEffectState&  effect);
-    int32_t SinceForceCalculator(volatile TEffectState&  effect);
-    int32_t TriangleForceCalculator(volatile TEffectState&  effect);
-    int32_t SawtoothDownForceCalculator(volatile TEffectState&  effect);
-    int32_t SawtoothUpForceCalculator(volatile TEffectState&  effect);
+    void ForceCalculator(int16_t* out); //int32_t ForceCalculator(Encoder encoder);
+    void ConstantForceCalculator(volatile TEffectState&  effect,int32_t* x_y_force);
+    void RampForceCalculator(volatile TEffectState&  effect, int32_t* x_y_force);
+    void SquareForceCalculator(volatile TEffectState&  effect, int32_t* x_y_force);
+    void SineForceCalculator(volatile TEffectState&  effect, int32_t* x_y_force);
+    void TriangleForceCalculator(volatile TEffectState&  effect, int32_t* x_y_force);
+    void SawtoothDownForceCalculator(volatile TEffectState&  effect, int32_t* x_y_force);
+    void SawtoothUpForceCalculator(volatile TEffectState&  effect, int32_t* x_y_force);
     int32_t ConditionForceCalculator(volatile TEffectState&  effect, int32_t inputForce, int32_t metric);
     
     int32_t ApplyGain(uint8_t value, uint8_t gain);
