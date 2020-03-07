@@ -40,7 +40,7 @@ extern volatile u8 gDebugMode;
 
 // Returns true if debug settings contain all of the given attributes
 // (see above constants DEBUG_xxx).
-b8 DoDebug(const u8 type);
+u8 DoDebug(const u8 type);
 
 // If below are defined, code for respective debug target is included into build
 //#define DEBUG_ENABLE_UART

@@ -1,6 +1,12 @@
 #ifndef _CONFIG_H_
 #define _CONFIG_H_
 
+typedef int32_t s32;
+typedef int16_t s16;
+typedef float f16;
+typedef int8_t s8;
+typedef uint8_t b8;
+
 //------------------------------------- Options ----------------------------------------------------------
 
 #define USE_PWM						// PWM output for drive torque input
@@ -14,6 +20,9 @@
 //------------------------------------- Pins -------------------------------------------------------------
 
 #define LED_PIN				13
+
+#define BUTTON_1			4
+#define BUTTON_2			5
 
 #define	PWM_PINA			9  // Timer1 PWM pin A
 #define	DIR_PINA			11
@@ -54,7 +63,7 @@
 #define CONFIG_SERIAL_PERIOD 50000
 
 //------------------------------------- FFB Config -----------------------------------------------------
-
+/*
 f32 configDamperGain = 1.0;		//ok
 f32 configFrictionGain = 1.0;	//OK
 f32 configConstantGain = 1.0;	//OK
@@ -64,8 +73,10 @@ f32 configInertiaGain = 1.0f;	//OK
 f32 configGeneralGain = 1.0f;	//OK
 f32 configCenterGain = 1.0f;	//OK
 f32 configStopGain = 1.0f;	//OK
-
+*/
 int MM_MIN_MOTOR_TORQUE=200;
 int MM_MAX_MOTOR_TORQUE=400;
+
+#define MM_MAX_MOTOR  400			// Set 20khz PWM
 
 #endif // _CONFIG_H_
