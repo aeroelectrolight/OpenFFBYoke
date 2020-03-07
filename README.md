@@ -1,5 +1,7 @@
 # OpenFFBYoke
 
+## this project is work in progress !!!!!
+
 A Yoke joystick open source firmware with force feedback on arduino leonardo for flight simulation or other...
 
 #### Firmware OpenFFBYoke to Arduino Leonardo
@@ -14,7 +16,7 @@ A Yoke joystick open source firmware with force feedback on arduino leonardo for
  
 #### Schematic
 
- ![pinout](./img/OpenFFBYoke_0.1.jpg)
+ ![pinout](./img/OpenFFBYoke_0.2.jpg)
 
 ## Version
 __________________

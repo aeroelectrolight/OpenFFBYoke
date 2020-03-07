@@ -1,7 +1,6 @@
 #ifndef _QUAD_ENCODER_H
 #define _QUAD_ENCODER_H
 
-
 // for arduino leonardo
 #define QUAD_ENC1_PIN_A		0
 #define QUAD_ENC1_PIN_B		1

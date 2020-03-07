@@ -36,6 +36,8 @@ void FfbEngine::SetFfb(FfbReportHandler* reporthandler) {
 
 void FfbEngine::ConstantForceCalculator(volatile TEffectState&  effect, int32_t* x_y_force) {
   int32_t tforce = ApplyEnvelope(effect, (int32_t)effect.magnitude);
+  //DEBUG_SERIAL.print("force : ");
+  //DEBUG_SERIAL.println((int32_t)effect.magnitude);
   ApplyDirection(effect, tforce, x_y_force);
 }
 
@@ -241,11 +243,8 @@ void FfbEngine::ForceCalculator(int16_t* out)
       
     }
   }
-  
-  Serial.print("force X");
-  Serial.println(x_y_force[0]);
-  Serial.print("force Y");
-  Serial.println(x_y_force[1]);
+  //DEBUG_SERIAL.print("testX : ");
+  //DEBUG_SERIAL.println(x_y_force[0]);
   //uint32_t gain = deviceGain.gain;
   //int32_t out[2];
   for(uint32_t i = 0;i < 2; i++)

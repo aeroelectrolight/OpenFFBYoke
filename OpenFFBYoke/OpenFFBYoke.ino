@@ -120,7 +120,7 @@ void loop()
 		DEBUG_SERIAL.println(x_y_force[0]);
 		DEBUG_SERIAL.print("axeY : ");
 		DEBUG_SERIAL.println(x_y_force[1]);
-		*/
+*/
 		byte zero1 = 0;
 		if (total_force < zero1 )
 		{
